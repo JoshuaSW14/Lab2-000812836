@@ -41,9 +41,9 @@ namespace Lab1_TeamMembershipSystem
 
             services.AddAuthorization(OptionsBuilderConfigurationExtensions =>
             {
-                OptionsBuilderConfigurationExtensions.AddPolicy("MohawkAdmin", policy =>
+                OptionsBuilderConfigurationExtensions.AddPolicy("MohawkManager", policy =>
                 {
-                    policy.RequireRole("Admin");
+                    policy.RequireRole("Manager");
                     policy.Requirements.Add(new EmailDomainRequirement("mohawkcollege.ca"));
                 });
             });
