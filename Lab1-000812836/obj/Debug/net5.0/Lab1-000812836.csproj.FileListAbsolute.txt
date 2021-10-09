@@ -190,3 +190,8 @@ C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\obj\Debug\net5.0\Lab1
 C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\obj\Debug\net5.0\ref\Lab1-000812836.dll
 C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\obj\Debug\net5.0\Lab1-000812836.pdb
 C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\obj\Debug\net5.0\Lab1-000812836.genruntimeconfig.cache
+C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\bin\Debug\net5.0\Azure.Core.dll
+C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\bin\Debug\net5.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\bin\Debug\net5.0\Azure.Identity.dll
+C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\bin\Debug\net5.0\Azure.Security.KeyVault.Secrets.dll
+C:\Users\Joshua\Source\Repos\Lab2-000812836\Lab1-000812836\bin\Debug\net5.0\Microsoft.Identity.Client.Extensions.Msal.dll

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Lab1_TeamMembershipSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lab1_TeamMembershipSystem
 {
@@ -37,7 +38,20 @@ namespace Lab1_TeamMembershipSystem
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();
+
+            services.AddAuthorization(OptionsBuilderConfigurationExtensions =>
+            {
+                OptionsBuilderConfigurationExtensions.AddPolicy("MohawkAdmin", policy =>
+                {
+                    policy.RequireRole("Admin");
+                    policy.Requirements.Add(new EmailDomainRequirement("mohawkcollege.ca"));
+                });
+            });
+            services.AddSingleton<IAuthorizationHandler, EmailDomainHandler>();
+
+
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
