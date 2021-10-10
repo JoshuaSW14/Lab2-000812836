@@ -79,9 +79,10 @@ namespace Lab1_TeamMembershipSystem.Data
             if (!result.Succeeded)
                 return 2;  // should log an error message here
 
+            //Add email claim to user
             result = await userManager.AddClaimAsync(adminUser, new Claim(ClaimTypes.Email, adminUser.Email));
             if (!result.Succeeded)
-                return 5;
+                return 5;  // should log an error message here
 
             // Create Member User
             var memberUser = new ApplicationUser
@@ -101,9 +102,10 @@ namespace Lab1_TeamMembershipSystem.Data
             if (!result.Succeeded)
                 return 4;  // should log an error message here
 
+            //Add email claim to user
             result = await userManager.AddClaimAsync(memberUser, new Claim(ClaimTypes.Email, memberUser.Email));
             if (!result.Succeeded)
-                return 6;
+                return 6;  // should log an error message here
 
             return 0;
         }

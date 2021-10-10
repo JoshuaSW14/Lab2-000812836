@@ -32,8 +32,6 @@ namespace Lab1_TeamMembershipSystem
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
             services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders()
@@ -41,14 +39,14 @@ namespace Lab1_TeamMembershipSystem
 
             services.AddAuthorization(OptionsBuilderConfigurationExtensions =>
             {
-                OptionsBuilderConfigurationExtensions.AddPolicy("MohawkManager", policy =>
+                OptionsBuilderConfigurationExtensions.AddPolicy("MohawkAdmin", policy =>
                 {
-                    policy.RequireRole("Manager");
+                    policy.RequireRole("Admin");
                     policy.Requirements.Add(new EmailDomainRequirement("mohawkcollege.ca"));
                 });
             });
-            services.AddSingleton<IAuthorizationHandler, EmailDomainHandler>();
 
+            services.AddSingleton<IAuthorizationHandler, EmailDomainHandler>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

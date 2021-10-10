@@ -129,7 +129,7 @@ namespace Lab1_TeamMembershipSystem.Controllers
         }
 
         // GET: Teams/Delete/5
-        [Authorize(Policy = "MohawkManager")]
+        [Authorize(Policy = "MohawkAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
